@@ -73,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'cicd_backend_assignment.wsgi.app'
+WSGI_APPLICATION = 'cicd_backend_assignment.wsgi.application'
 
 
 # Database
