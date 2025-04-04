@@ -1,3 +1,4 @@
+import connection
 from django.test import TestCase
 
 # Create your tests here.
@@ -22,3 +23,9 @@ class TodoTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(response.data['title'], self.todo_data['title'])
         self.assertEqual(response.data['content'], self.todo_data['content'])
+
+    def tearDown(self):
+        """
+        Cleanup code: Manually close the database connection if needed.
+        """
+        connection.close()
