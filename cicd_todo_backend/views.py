@@ -13,7 +13,7 @@ from rest_framework.response import Response
 from cicd_todo_backend.models import Todo
 from cicd_todo_backend.serializers import UserSerializer, TodoSerializer
 
-
+# Added register view api
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     permission_classes = (AllowAny,)
