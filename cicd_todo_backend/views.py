@@ -26,7 +26,7 @@ class LoginView(ObtainAuthToken):
         return Response({'token': token.key, 'user_id': token.user_id})
 
 
-
+# Added logout view api
 class LogoutView(generics.GenericAPIView):
     permission_classes = (IsAuthenticated,)
     def post(self, request):
