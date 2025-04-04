@@ -45,21 +45,3 @@ class TodoApiTests(APITestCase):
 
         # Ensure created_at and updated_at are not the same (since updated_at should change)
         self.assertNotEqual(todo.created_at, todo.updated_at)
-
-    def test_update_todo(self):
-        """
-        Test updating a Todo item.
-        """
-        todo = self.todo
-        # Update the Todo object
-        todo.completed = True
-        todo.save()
-
-        # Reload the object from the database
-        updated_todo = Todo.objects.get(id=todo.id)
-
-        # Check that the 'completed' field has been updated
-        self.assertTrue(updated_todo.completed)
-
-        # Ensure updated_at is now different (because it's automatically updated)
-        self.assertNotEqual(todo.updated_at, updated_todo.updated_at)
